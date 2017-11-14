@@ -1,25 +1,37 @@
 <!DOCTYPE html>
+<html>
 
 <head>
-
+  <!-- <meta charset="UTF-8"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>av-fractals</title>
 </head>
 
-
 <body>
-  <table>
-    <tr>
-      <th>
-        <canvas id="main-canv"></canvas>
-      </th>
-    </tr>
-    <tr>
-      number of iterations:
-      <textarea name="iters" id="txt-iters" cols="5" rows="1"></textarea>
-      <button id="btn" onclick="start()">Start</button>
-    </tr>
-  </table>
-</body>
+  <p>
+    <select id="dropdown">
+      <option value="0">Random points</option>
+      <option value="1">Serpinsky square</option>
+      <option value="2">Serpinsky triangle</option>
+      <option value="3">Mandelbrot set</option>
+    </select>
+  </p>
+  number of iterations:
+  <textarea name="iters" id="txt-iters" cols="5" rows="1"></textarea>
+  <button id="btn" onclick="start()">Start</button>
 
-<script src="javascript.js"></script>
+  <input id="angle-slider" type="range" min="0" max="3" value="2" step="0.001" oninput="start()">
+  <input id="x-offset" type="range" min="-2" max="0" value="-2" step="0.001" oninput="start()">
+  <input id="y-offset" type="range" min="-2" max="0" value="-2" step="0.001" oninput="start()">
+  <input id="zoom" type="range" min="1" max="4" value="4" step="0.001" oninput="start()">
+
+  <div>
+    <canvas id="main-canv"></canvas>
+  </div>
+
+  <script src="javascript.js"></script>
+
+</body>
 
 </html>
